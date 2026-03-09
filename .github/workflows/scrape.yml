@@ -40,4 +40,10 @@ jobs:
       - name: Run GitHub products scraper
         run: python scripts/scraper_products.py
         continue-on-error: true
-
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+      OPENAI_API_KEY: ""                # 不用的话可以留空
+      DOUBAO_API_KEY: ${{ secrets.DOUBAO_API_KEY }}
+      DOUBAO_BASE_URL: ${{ secrets.DOUBAO_BASE_URL }}
+      DOUBAO_MODEL: ${{ secrets.DOUBAO_MODEL }}
